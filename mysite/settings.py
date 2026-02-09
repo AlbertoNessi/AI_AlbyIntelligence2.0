@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'alby_intelligence.apps.AlbyIntelligenceConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -80,6 +81,7 @@ DATABASES = {
         'PASSWORD': 'django_pass_123',
         'HOST': '127.0.0.1',
         'PORT': '3306',
+                'TIME_ZONE': 'Europe/Rome'
     }
 }
 
