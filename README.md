@@ -48,8 +48,15 @@ Django framework
 
 ### Model
 ***Tables***
-- Employees
+- Users
+- Files
+- CCNL
+- ContractTypes
 - Contracts
+- Roles
+- Section
+- RoleSections
+- Employees
 - External_consultants
 - Documents
 - Folders
