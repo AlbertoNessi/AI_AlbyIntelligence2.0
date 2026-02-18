@@ -33,7 +33,7 @@ This is a multi-purpose personal project.
 | Assenze | Malattia e giustificativi assenza | Gestione assenze oltre ferie (malattia, permessi speciali). |
 
 ## Technical specs
-***Django is similar to MVC, but the View the layer that decide what to show in the template***
+***Django is similar to MVC, but the View is the layer that decide what to show in the template, not how to show it***
 
 ### Template
 ***No dependency, just native HTML, CSS and JavaScript***

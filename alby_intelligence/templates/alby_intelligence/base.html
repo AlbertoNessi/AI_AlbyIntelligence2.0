@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Alby intelligence</title>
+    <style>
+      /* Keep the heading area at the very top, centered horizontally */
+      .site-header {
+        text-align: center; /* Center h1 + subtitle */
+        margin: 0;          /* Avoid default margins affecting alignment */
+        padding-top: 16px;  /* Small breathing space from the top edge */
+      }
+
+      .site-header h1 {
+        margin: 0;          /* Remove default h1 top/bottom margin */
+      }
+
+      .site-header small {
+        display: block;     /* Put subtitle on its own line under h1 */
+        margin-top: 6px;    /* Visual separation from the title */
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <h1>Alby Intelligence</h1>
+      <small>Business made easy</small>
+    </header>
+
+    {% for contract in contracts %}
+		<p>{{ contract.title }}</p>
+		<small>{{ contract.subtitle }}</small>
+	{% empty %}
+		<p>No contracts found.</p>
+	{% endfor %}
+
+  </body>
+</html>

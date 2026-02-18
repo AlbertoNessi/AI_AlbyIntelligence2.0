@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 
 class Users(AbstractUser):
     username = models.CharField(max_length=100, null=False, unique=True)
-    enabled = models.BooleanField()
+    enabled = models.BooleanField(null=True)
     deleted_at = models.DateField(null=True)
 
 
@@ -28,15 +28,16 @@ class ContractTypes(models.Model):
 class Contracts(models.Model):
     title = models.CharField(max_length=100)
     subtitle = models.CharField(max_length=200)
-    file = models.ForeignKey(Files, on_delete=models.CASCADE)
-    signed_by_company = models.BooleanField()
-    signed_by_employee = models.BooleanField()
-    signed_by_company_date = models.DateTimeField()
-    signed_by_employee_date = models.DateTimeField()
+    file = models.ForeignKey(Files, on_delete=models.CASCADE, null=True)
+    signed_by_company = models.BooleanField(null=True)
+    signed_by_employee = models.BooleanField(null=True)
+    signed_by_company_date = models.DateTimeField(null=True)
+    signed_by_employee_date = models.DateTimeField(null=True)
     ccnl = models.ForeignKey(CCNL, null=True, on_delete=models.SET_NULL)
-    validity_start = models.DateField()
-    validity_end = models.DateField()
-    type = models.ForeignKey(ContractTypes, on_delete=models.RESTRICT)
+    validity_start = models.DateField(null=True)
+    validity_end = models.DateField(null=True)
+    type = models.ForeignKey(
+        ContractTypes, on_delete=models.RESTRICT, null=True)
 
 
 class Roles(models.Model):
